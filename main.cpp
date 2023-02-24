@@ -1,3 +1,4 @@
+п»ї//update
 #include<iostream>
 #include<conio.h>
 #include<chrono>
@@ -11,11 +12,11 @@ using namespace std::literals::chrono_literals;
 #define Enter 13
 #define Escape 27
 class Tank
-{
+{//РєР»Р°СЃСЃ С‚Р°РЅРє Р°РїРґРµР№С‚РЅРёСЃСЊ
 	static const int MIN_TANK_VOLUME = 20;
 	static const int MAX_TANK_VOLUME = 80;
-	const int VOLUME;//объем бака
-	double fuel_level;//уровень топлива
+	const int VOLUME;//РѕР±СЉРµРј Р±Р°РєР°
+	double fuel_level;//СѓСЂРѕРІРµРЅСЊ С‚РѕРїР»РёРІР°
 public:
 	int get_VOLUME()const
 	{
@@ -208,10 +209,10 @@ public:
 				break;
 			case Enter: driver_inside ? get_out() : get_in(); break;
 			case 'F':case 'f':
-				if (driver_inside)cout << "выходи из машины\n";
+				if (driver_inside)cout << "РІС‹С…РѕРґРё РёР· РјР°С€РёРЅС‹\n";
 				else {
 					double amount;
-					cout << "введите кол-во топлива: "; cin >> amount;
+					cout << "РІРІРµРґРёС‚Рµ РєРѕР»-РІРѕ С‚РѕРїР»РёРІР°: "; cin >> amount;
 					tank.fill(amount);
 				}
 				break;
@@ -254,9 +255,9 @@ public:
 			cout << "Fuel level:\t" << tank.get_fuel_level() << " liters\n ";
 			if (tank.get_fuel_level() < 5)
 			{
-				SetConsoleTextAttribute(hConsole, 0xCF);//c-красный фон,f-белые буквы
+				SetConsoleTextAttribute(hConsole, 0xCF);//c-РєСЂР°СЃРЅС‹Р№ С„РѕРЅ,f-Р±РµР»С‹Рµ Р±СѓРєРІС‹
 				cout << " LOW FUEL";
-				SetConsoleTextAttribute(hConsole, 0x07);//вернули обратно
+				SetConsoleTextAttribute(hConsole, 0x07);//РІРµСЂРЅСѓР»Рё РѕР±СЂР°С‚РЅРѕ
 			}
 			cout << "\nEngine:\t" << (engine.started() ? "started" : "stopped") << endl;
 			cout << "Speed: " << speed << " km/h\n" << endl;
@@ -272,8 +273,8 @@ public:
 };
 //#define TANK_CHECK
 //#define ENGINE_CHECK
-/*некоторым макросам дают только имя и не дают значение, такие макросы используются с директивами
-условной компиляции #ifdef.. #endif*/
+/*РЅРµРєРѕС‚РѕСЂС‹Рј РјР°РєСЂРѕСЃР°Рј РґР°СЋС‚ С‚РѕР»СЊРєРѕ РёРјСЏ Рё РЅРµ РґР°СЋС‚ Р·РЅР°С‡РµРЅРёРµ, С‚Р°РєРёРµ РјР°РєСЂРѕСЃС‹ РёСЃРїРѕР»СЊР·СѓСЋС‚СЃСЏ СЃ РґРёСЂРµРєС‚РёРІР°РјРё
+СѓСЃР»РѕРІРЅРѕР№ РєРѕРјРїРёР»СЏС†РёРё #ifdef.. #endif*/
 
 void main()
 {
@@ -284,7 +285,7 @@ void main()
 	do
 	{
 		int fuel;
-		cout << "Введите объем топлива: "; cin >> fuel;
+		cout << "Р’РІРµРґРёС‚Рµ РѕР±СЉРµРј С‚РѕРїР»РёРІР°: "; cin >> fuel;
 		tank.fill(fuel);
 		tank.info();
 	} while (_getch() != 27);
